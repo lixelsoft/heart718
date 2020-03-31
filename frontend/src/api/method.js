@@ -4,8 +4,8 @@ import axios from 'axios';
 // import { URL } from "../config";
 // const API_URL = URL;
 
-import { LOCALHOST } from "../config";
-const API_URL = LOCALHOST;
+import { LOCALHOST, URL } from "../config";
+const API_URL = URL;
 
 export const GetMyMarkerList = () => {
 
