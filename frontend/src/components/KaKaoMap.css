@@ -1,0 +1,17 @@
+#roadviewControl {
+  position:absolute;
+  top:15px;
+  left:25px;
+  width:42px;
+  height:42px;
+  z-index: 1;
+  cursor: pointer; 
+  background: url(http://t1.daumcdn.net/localimg/localimages/07/2018/pc/common/img_search.png) 0 -450px no-repeat;}
+#mapWrapper {height:100%;z-index:1;}
+#roadviewControl.active {background-position:0 -350px;}
+
+/* 
+#container.view_map #mapWrapper {z-index: 10;}
+#container.view_map #btnMap {display: none;}
+#container.view_roadview #mapWrapper {z-index: 0;}
+#container.view_roadview #btnRoadview {display: none;} */
