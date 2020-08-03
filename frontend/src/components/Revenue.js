@@ -1,6 +1,7 @@
 /*global kakao*/
 import React, { Fragment } from 'react';
 import { Button, Modal } from "react-bootstrap";
+import _ from 'underscore';
 
 // import './App.css';
 
@@ -11,14 +12,22 @@ class App extends React.Component {
   constructor(props) {
     super(props);	
     this.state = {
-      revenueArr: []
+      markerList: []
     };
   }
   componentDidMount() {
 
     Api.GetDailyRevenue()
       .then(res => {
-        console.log(res);
+        let self = this;
+        let tList = [];
+        _.map(res.result, (item, index) => {
+          tList.push(item);
+        });
+
+        self.setState({
+          markerList: tList
+        })
       })
       .catch(err => {
         alert("마커 제거 에러");
@@ -28,9 +37,21 @@ class App extends React.Component {
 
 
   render() {
+    const {markerList} = this.state;
+    console.log(markerList);
+    const listArea = markerList ? (
+      markerList.map((item, index) => {
+        return (
+          <>
+            {`${item.dt}: $${item.sum}`} <br />
+          </>
+        )
+      })
+    ) : null;
+
     return (
       <div >
-        TEST
+        {listArea}
       </div>
   )}
   

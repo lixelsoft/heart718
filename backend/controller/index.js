@@ -63,8 +63,10 @@ module.exports = {
   getDailyRevenue: function(req, res) {
 
     db.queryGetDailyRevenue()
-      .then(() => {
-        res.status(200).json();
+      .then((result) => {
+        res.status(200).json({
+          result: result
+        });
       })
       .catch(err => {
         res.status(403).json("Error");

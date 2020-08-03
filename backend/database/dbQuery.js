@@ -49,8 +49,10 @@ module.exports = {
 
   queryGetDailyRevenue: function() {
     return new Promise(function(resolve, reject) {
-      let params = [];
-      let sqlQuery = mysql.format("SELECT Date(`date`) AS `dt`, SUM(`fan_revenue`) FROM `ads_revenue` GROUP BY `dt` ORDER BY `dt` DESC;", params);
+      // let params = [];
+      let sqlQuery = "SELECT Date(`date`) AS `dt`, SUM(`fan_revenue`) AS `sum` FROM `ads_revenue` GROUP BY `dt` ORDER BY `dt` DESC;";
+      // let sqlQuery = "SELECT * FROM `ads_revenue`;"
+      // let sqlQuery = mysql.format("", params);
 
       pool.query(sqlQuery, function (error, results, fields) {
         if (error) {
