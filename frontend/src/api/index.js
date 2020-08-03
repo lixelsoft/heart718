@@ -4,5 +4,6 @@ import * as Api from './method';
 export const GetMarkerList = Api.GetMyMarkerList;
 export const AddMarker = Api.AddMyMarker;
 export const DelMyMarker = Api.DelMyMarker;
+export const GetDailyRevenue = Api.GetDailyRevenue;
 
 

@@ -10,7 +10,7 @@ module.exports = {
   },
   
   backend: {
-    port: 3300
+    port: 8719
   }
 
 }

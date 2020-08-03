@@ -5,6 +5,7 @@ import { Button, Modal } from "react-bootstrap";
 import './App.css';
 
 import KaKaoMap from './KaKaoMap';
+import Revenue from './Revenue';
 
 class App extends React.Component {
   constructor(props) {
@@ -14,7 +15,8 @@ class App extends React.Component {
   render() {
     return (
       <div className="App" >
-        <KaKaoMap />
+        {/* <KaKaoMap /> */}
+        <Revenue />
       </div>
   )}
   

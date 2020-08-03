@@ -7,5 +7,7 @@ router
 .post ('/addMarkers', controllerAPI.addMarker)
 .post ('/delMarkers', controllerAPI.delMarker)
 
+.get ('/getRevenue', controllerAPI.getDailyRevenue)
+
 
 module.exports = router;

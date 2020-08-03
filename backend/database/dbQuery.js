@@ -45,6 +45,21 @@ module.exports = {
         }
       });
     });
+  },
+
+  queryGetDailyRevenue: function() {
+    return new Promise(function(resolve, reject) {
+      let params = [];
+      let sqlQuery = mysql.format("SELECT Date(`date`) AS `dt`, SUM(`fan_revenue`) FROM `ads_revenue` GROUP BY `dt` ORDER BY `dt` DESC;", params);
+
+      pool.query(sqlQuery, function (error, results, fields) {
+        if (error) {
+          reject(error);
+        } else {
+          resolve(results);
+        }
+      });
+    });
   }
 
 }

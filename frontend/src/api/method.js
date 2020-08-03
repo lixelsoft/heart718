@@ -40,3 +40,13 @@ export const DelMyMarker = (data) => {
       throw error
     });
 }
+
+export const GetDailyRevenue = () => {
+  console.log("GetDailyRevenue");
+  const baseUrl = API_URL+'/data/getRevenue';
+  return axios.get(baseUrl)
+    .then(res => res.data)
+    .catch(error => {
+      throw error
+    }); 
+}
