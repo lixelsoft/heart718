@@ -7,6 +7,7 @@ import _ from 'underscore';
 
 // import KaKaoMap from './KaKaoMap';
 import * as Api from '../api';
+const zeroPad = (num, places) => String(num).padStart(places, '0')
 
 class App extends React.Component {
   constructor(props) {
@@ -41,9 +42,13 @@ class App extends React.Component {
     console.log(markerList);
     const listArea = markerList ? (
       markerList.map((item, index) => {
+        let date = new Date(item.dt);
+        let revenue = item.sum.toString().split('.');
+        let sum = `${revenue[0]}.${revenue[1][0]}${revenue[1][1]}${revenue[1][2]}`;
+
         return (
           <>
-            {`${item.dt}: $${item.sum}`} <br />
+            {`${date.getFullYear()}-${zeroPad(date.getMonth()+1, 2)}-${zeroPad(date.getDate(), 2)}: $${sum}`} <br />
           </>
         )
       })
